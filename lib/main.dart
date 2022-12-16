@@ -1,3 +1,4 @@
+import 'package:envirement_app/screens/composant/splach_screen.dart';
 import 'package:flutter/material.dart';
 
 import './recycle_data.dart';
@@ -22,14 +23,14 @@ class _MyAppState extends State<MyApp> {
     'WEEE': false,
     'Glass': false,
   };
-  List<Meal> _availableMeals = DUMMY_MEALS;
+  List<Meal> _availableMeals = DUMMY_recycle;
   List<Meal> _favoriteMeals = [];
 
   void _setFilters(Map<String, bool> filterData) {
     setState(() {
       _filters = filterData;
 
-      _availableMeals = DUMMY_MEALS.where((meal) {
+      _availableMeals = DUMMY_recycle.where((meal) {
         if (_filters['Plastic']! && !meal.Plastic) {
           return false;
         }
@@ -57,7 +58,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       setState(() {
         _favoriteMeals.add(
-          DUMMY_MEALS.firstWhere((meal) => meal.id == mealId),
+          DUMMY_recycle.firstWhere((meal) => meal.id == mealId),
         );
       });
     }
@@ -90,9 +91,9 @@ class _MyAppState extends State<MyApp> {
       // home: CategoriesScreen(),
       initialRoute: '/', // default is '/'
       routes: {
-        '/': (ctx) => TabsScreen(_favoriteMeals),
-        CategoryMealsScreen.routeName: (ctx) =>
-            CategoryMealsScreen(_availableMeals),
+        '/': (ctx) =>SplashScreen2() ,
+        TabsScreen.routeName: (ctx)=>TabsScreen(_favoriteMeals),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(_availableMeals),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },

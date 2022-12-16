@@ -121,7 +121,7 @@ class MealItem extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(
-                        Icons.schedule,
+                        Icons.add,
                       ),
                       SizedBox(
                         width: 6,

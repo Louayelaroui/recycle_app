@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './models/category.dart';
 import './models/recycle.dart';
 
-const DUMMY_CATEGORIES = const [
+const recycle_CATEGORIES = const [
   Category(
     id: 'c1',
     title: 'Plastic',
@@ -52,7 +52,7 @@ const DUMMY_CATEGORIES = const [
 
 ];
 
-const DUMMY_MEALS = const [
+const DUMMY_recycle = const [
   Meal(
     id: 'm1',
     categories: [

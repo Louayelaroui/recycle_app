@@ -8,7 +8,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       padding: const EdgeInsets.all(25),
-      children: DUMMY_CATEGORIES
+      children: recycle_CATEGORIES
           .map(
             (catData) => CategoryItem(
                   catData.id,

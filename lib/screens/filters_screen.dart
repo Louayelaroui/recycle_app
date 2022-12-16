@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   static const routeName = '/filters';
@@ -15,17 +14,17 @@ class FiltersScreen extends StatefulWidget {
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
-  bool _glutenFree = false;
-  bool _vegetarian = false;
-  bool _vegan = false;
-  bool _lactoseFree = false;
+  bool Plastic = false;
+  bool Wood = false;
+  bool WEEE = false;
+  bool Glass = false;
 
   @override
   initState() {
-    _glutenFree = widget.currentFilters['gluten']!;
-    _lactoseFree = widget.currentFilters['lactose']!;
-    _vegetarian = widget.currentFilters['vegetarian']!;
-    _vegan = widget.currentFilters['vegan']!;
+    Plastic = widget.currentFilters['Plastic']!;
+    Glass = widget.currentFilters['Glass']!;
+    Wood = widget.currentFilters['Wood']!;
+    WEEE = widget.currentFilters['WEEE']!;
     super.initState();
   }
 
@@ -55,17 +54,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
             icon: Icon(Icons.save),
             onPressed: () {
               final selectedFilters = {
-                'gluten': _glutenFree,
-                'lactose': _lactoseFree,
-                'vegan': _vegan,
-                'vegetarian': _vegetarian,
+                'Plastic': Plastic,
+                'Glass': Glass,
+                'WEEE': WEEE,
+                'Wood': Wood,
               };
               widget.saveFilters(selectedFilters);
             },
           )
         ],
       ),
-      drawer: MainDrawer(),
       body: Column(
         children: <Widget>[
           Container(
@@ -79,49 +77,49 @@ class _FiltersScreenState extends State<FiltersScreen> {
             child: ListView(
               children: <Widget>[
                 _buildSwitchListTile(
-                  'Gluten-free',
+                  'Plastic',
                   'Only include gluten-free meals.',
-                  _glutenFree,
+                  Plastic,
                   (newValue) {
                     setState(
                       () {
-                        _glutenFree = newValue;
+                        Plastic = newValue;
                       },
                     );
                   },
                 ),
                 _buildSwitchListTile(
-                  'Lactose-free',
+                  'Glass',
                   'Only include lactose-free meals.',
-                  _lactoseFree,
+                  Glass,
                   (newValue) {
                     setState(
                       () {
-                        _lactoseFree = newValue;
+                        Glass = newValue;
                       },
                     );
                   },
                 ),
                 _buildSwitchListTile(
-                  'Vegetarian',
+                  'Wood',
                   'Only include vegetarian meals.',
-                  _vegetarian,
+                  Wood,
                   (newValue) {
                     setState(
                       () {
-                        _vegetarian = newValue;
+                        Wood = newValue;
                       },
                     );
                   },
                 ),
                 _buildSwitchListTile(
-                  'Vegan',
+                  'WEEE',
                   'Only include vegan meals.',
-                  _vegan,
+                  WEEE,
                   (newValue) {
                     setState(
                       () {
-                        _vegan = newValue;
+                        WEEE = newValue;
                       },
                     );
                   },
