@@ -12,15 +12,15 @@ class _SplashScreen2State extends State<SplashScreen2> {
   PageController _controller = PageController();
   List<SplashScreenChild> splashScreenChildrens = [
     SplashScreenChild(
-      TiTle: 'recycle App',
+      TiTle: 'Recycle App',
       secondTitle: 'welcome to recycle App',
       description: 'hello',
-      image: 'images/screen_1.png',
+      image: 'images/screen1_1.png',
         hasWidget:false
     ),
     SplashScreenChild(
       TiTle: 'Lets win some money ',
-      secondTitle: 'Lets win some moneywith us',
+      secondTitle: 'Lets win some money togeher',
       description: 'recycle and win  ',
       image: 'images/screen_2.png',
         hasWidget:false
